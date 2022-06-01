@@ -105,7 +105,6 @@ def split(df, group):
 
 
 def create_tf_example(group, path):
-    print(os.path.join(path, '{}/{}.bmp'.format(group.object.className.values[0],group.filename)))
     with tf.io.gfile.GFile(os.path.join(path, '{}/{}.bmp'.format(group.object.className.values[0],group.filename)), 'rb') as fid:
         print(fid)
         encoded_jpg = fid.read()
