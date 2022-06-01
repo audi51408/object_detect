@@ -70,10 +70,10 @@ def xml_to_csv(path):
             tree = ET.parse(xml_file)
             root = tree.getroot()
             filename = root.find('FileName').text
-            xmin = root.find('DefectBound').find('X1').text
-            ymin = root.find('DefectBound').find('Y1').text
-            xmax = root.find('DefectBound').find('X2').text
-            ymax = root.find('DefectBound').find('Y2').text
+            xmin = int(root.find('DefectBound').find('X1').text)
+            ymin = int(root.find('DefectBound').find('Y1').text)
+            xmax = int(root.find('DefectBound').find('X2').text)
+            ymax = int(root.find('DefectBound').find('Y2').text)
             width = str(int(xmax) - int(xmin))
             height = str(int(ymax) - int(ymin))
             value = (filename,
