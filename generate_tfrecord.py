@@ -64,7 +64,7 @@ label_map_dict = label_map_util.get_label_map_dict(label_map)
 
 def xml_to_csv(path):
     xml_list = []
-    className = os.listdir(path)[1:]
+    className = os.listdir(path)
     for i in className:
         for xml_file in glob.glob(path +"/"+i +'/*.xml'):
             tree = ET.parse(xml_file)
